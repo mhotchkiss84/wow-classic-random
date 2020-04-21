@@ -1,0 +1,23 @@
+body{
+    background-color: gray;
+    text-align: center;
+}
+
+form{
+    margin-top: 15vh;
+    font-size: 18px;
+    font-weight: bolder;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+input{
+    padding: 20px;
+}
+label{
+    padding: 20px;
+}
