@@ -25,3 +25,7 @@ label{
 button{
     margin-top: 20px;
 }
+#output-container{
+    font-size: 20px;
+    font-weight:  bolder;
+}
