@@ -2,14 +2,13 @@
 function randomFaction(){
     const factions = ["Alliance", "Horde"]
     const finalFaction = factions[Math.floor(Math.random() * factions.length)];
-    console.log(finalFaction);
     return finalFaction
 }
 //Function for random gender
 function randomGender(){
     const genders = ["Male", "Female"]
     const finalGender = genders[Math.floor(Math.random() * genders.length)];
-    console.log(finalGender);
+    return finalGender
 }
 //Function for random spec
 function randomSpec(){}
@@ -39,8 +38,12 @@ document.querySelector(`#random-btn`).addEventListener("click", generateEvent =>
     const faction = document.querySelector(`#faction`).value
     const gender = document.querySelector(`#gender`).value
     const spec = document.querySelector(`#spec`).value
-    console.log(spec);
+    if(faction === "yes"){
+        const endFaction = randomFaction()
+        console.log(endFaction);
+    }
+    if(gender === "yes"){
+        const endGender = randomGender()
+        console.log(endGender);
+    }
 })
-
-randomFaction()
-randomGender()
