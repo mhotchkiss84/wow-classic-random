@@ -69,15 +69,23 @@ document.querySelector(`#random-btn`).addEventListener("click", generateEvent =>
     const spec = document.querySelector(`#spec`).value
     if(faction === "yes"){
         endFaction = randomFaction()
-        // console.log(endFaction);
+    } else if(faction === "alliance"){
+        endFaction = "Alliance"
+        console.log(endFaction);
+    } else if(faction === "horde"){
+        endFaction = "Horde"
+        console.log(endFaction);
     }
     if(gender === "yes"){
         endGender = randomGender()
-        // console.log(endGender);
     }
     //Gotta do race first then class.....
     endRace = randomRace(endFaction)
     endClass = randomClass(endRace)
-    console.log(endFaction, endRace, endGender, endClass);
-    return document.querySelector(`#output-container`).innerHTML = `<p> You are an ${endFaction} ${endRace} ${endGender} ${endClass}`
+    // console.log(endFaction, endRace, endGender, endClass);
+    if(gender === "yes"){
+    return document.querySelector(`#output-container`).innerHTML = `<p> You are an ${endFaction} ${endRace} ${endGender} ${endClass}.`
+    } else if(gender === "no"){
+        return document.querySelector(`#output-container`).innerHTML = `<p> You are an ${endFaction} ${endRace} ${endClass}.`
+    } 
 })
