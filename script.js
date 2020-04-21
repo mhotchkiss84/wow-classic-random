@@ -84,8 +84,8 @@ document.querySelector(`#random-btn`).addEventListener("click", generateEvent =>
     endClass = randomClass(endRace)
     // console.log(endFaction, endRace, endGender, endClass);
     if(gender === "yes"){
-    return document.querySelector(`#output-container`).innerHTML = `<p> You are an ${endFaction} ${endRace} ${endGender} ${endClass}.`
+    return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endGender} ${endClass}.`
     } else if(gender === "no"){
-        return document.querySelector(`#output-container`).innerHTML = `<p> You are an ${endFaction} ${endRace} ${endClass}.`
+        return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endClass}.`
     } 
 })
