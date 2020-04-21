@@ -12,14 +12,27 @@
     <div id="form-container">
       <form action="">
         <label for="server">Include a random server?</label>
-        <input type="checkbox" name="server" id="server">
+        <select name="server" id="server">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
         <label for="faction">Include a random faction?</label>
-        <input type="checkbox" name="faction" id="faction">
+        <select name="faction" id="faction">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
         <label for="gender">Include a random gender?</label>
-        <input type="checkbox" name="gender" id="gender">
+        <select name="gender" id="gender">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
         <label for="spec">Include a random specialization?</label>
-        <input type="checkbox" name="spec" id="spec">
+        <select name="spec" id="spec">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
       </form>
+      <button id="random-btn">Generate</button>
     </div>
     <div id="output-container"></div>
     <script src="script.js"></script>

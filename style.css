@@ -10,14 +10,18 @@ form{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: center;
     align-items: center;
     padding: 5px;
 }
 input{
     padding: 20px;
+    /* margin-bottom: 50px; */
 }
 label{
     padding: 20px;
+}
+button{
+    margin-top: 20px;
 }
