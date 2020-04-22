@@ -1,3 +1,32 @@
+//Function for random server
+function randomServer(type){
+    let finalServer = ""
+    const usEastPVE = ["Ashkandi", "Mankrik", "Pagle", "Westfall", "Windseeker"]
+    const usEastPVP = ["Benediction", "Earthfury", "Faerlina", "Heartseeker", "Herod", "Incendius", "Kirtonos", "Kromcrush", "Netherwind", "Skeram", "Stalagg", "Sulfuras", "Thalnos"]
+    const usEastRP = ["Bloodsail Buccaneers"]
+    const usEastRPPVP = ["Deviate Delight"]
+    const usWestPVE = ["Atiesh", "Azuresong", "Myzrael", "Old Blanchy"]
+    const usWestPVP = ["Anathema", "Arcanite Reaper", "Bigglesworth", "Blaumeux", "Fairbanks", "Kurinnaxx", "Rattlegore", "Smolderweb", "Thunderfury", "Whitemane"]
+    const usWestRP = []
+    const usWestRPPVP = ["Grobbulus"]
+    if(type === "pve-east"){
+        finalServer = usEastPVE[Math.floor(Math.random() * usEastPVE.length)];
+    } else if(type === "pvp-east"){
+        finalServer = usEastPVP[Math.floor(Math.random() * usEastPVP.length)];
+    } else if(type === "rp-east"){
+        finalServer = usEastRP[Math.floor(Math.random() * usEastRP.length)];
+    } else if(type === "rppvp-east"){
+        finalServer = usEastRPPVP[Math.floor(Math.random() * usEastRPPVP.length)];
+    } else if(type === "pve-west"){
+        finalServer = usWestPVE[Math.floor(Math.random() * usWestPVE.length)];
+    } else if(type === "pvp-west"){
+        finalServer = usWestPVP[Math.floor(Math.random() * usWestPVP.length)];
+    } else if(type === "rppvp-west"){
+        finalServer = usWestRPPVP[Math.floor(Math.random() * usWestRPPVP.length)];
+    }
+    return finalServer
+}
+
 //Function for random faction
 function randomFaction(){
     const factions = ["Alliance", "Horde"]
@@ -60,6 +89,10 @@ function randomClass(race){
 //Event listener for user input
 document.querySelector(`#random-btn`).addEventListener("click", generateEvent => {
     const server = document.querySelector(`#server`).value
+    let endServer = ""
+    if(server != "none"){
+        endServer = randomServer(server)
+    }
     const faction = document.querySelector(`#faction`).value
     let endFaction
     const gender = document.querySelector(`#gender`).value
@@ -83,9 +116,13 @@ document.querySelector(`#random-btn`).addEventListener("click", generateEvent =>
     endRace = randomRace(endFaction)
     endClass = randomClass(endRace)
     // console.log(endFaction, endRace, endGender, endClass);
-    if(gender === "yes"){
-    return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endGender} ${endClass}.`
-    } else if(gender === "no"){
+    if(gender === "yes" && server != "none"){
+    return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endGender} ${endClass} and you are on the server ${endServer}.`
+    } else if(gender === "no" && server != "none"){
+        return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endClass} and you are on the server ${endServer}.`
+    } else if(gender === "yes" && server === "none"){
+        return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endGender} ${endClass}.`
+    } else if(gender === "no" && server ==="none"){
         return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endClass}.`
-    } 
+    }
 })
