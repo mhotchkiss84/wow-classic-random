@@ -16,4 +16,6 @@
 # Clone the repo
 # The database .json file does nothing currently so no need to run a JSON server
 # If using gitbash open with your code editor and run live server
-# Expected output: Not much right now since its broken from decided to redo everything.
+
+# Expected behavior:
+# User can select options with dropdown and hit the generate button to generate a random character
