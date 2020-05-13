@@ -1,5 +1,5 @@
 # wow-classic-random
-# This is project for randomizing a character using user selected parameters.
+# This is project for randomizing a character using user selected parameters. This is a smaller project that I am going to use in a bigger one in a few months.
 # Initially this project was a form with selections. I have since decided to go a different direction using images and click events
 
 # To Do:
