@@ -5,7 +5,7 @@ document.querySelector(`#random-btn`).addEventListener("click", generateEvent =>
     const server = document.querySelector(`#server`).value
     let endServer = ""
     if(server != "none"){
-        endServer = randomServer(server)
+        endServer = randomFunctions.randomServer(server)
     }
     const faction = document.querySelector(`#faction`).value
     let endFaction
@@ -15,7 +15,7 @@ document.querySelector(`#random-btn`).addEventListener("click", generateEvent =>
     let endRace = ""
     const spec = document.querySelector(`#spec`).value
     if(faction === "yes"){
-        endFaction = randomFaction()
+        endFaction = randomFunctions.randomFaction()
     } else if(faction === "alliance"){
         endFaction = "Alliance"
         console.log(endFaction);
@@ -24,11 +24,11 @@ document.querySelector(`#random-btn`).addEventListener("click", generateEvent =>
         console.log(endFaction);
     }
     if(gender === "yes"){
-        endGender = randomGender()
+        endGender = randomFunctions.randomGender()
     }
     //Gotta do race first then class.....
-    endRace = randomRace(endFaction)
-    endClass = randomClass(endRace)
+    endRace = randomFunctions.randomRace(endFaction)
+    endClass = randomFunctions.randomClass(endRace)
     // console.log(endFaction, endRace, endGender, endClass);
     if(gender === "yes" && server != "none"){
     return document.querySelector(`#output-container`).innerHTML = `<p> You are a ${endFaction} ${endRace} ${endGender} ${endClass} and you are on the server ${endServer}.`
