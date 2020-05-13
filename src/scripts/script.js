@@ -2,6 +2,7 @@
 import randomFunctions from './randomFunctions.js';
 //Event listener for user input
 document.querySelector(`#random-btn`).addEventListener('click', (generateEvent) => {
+    // Make function and move to eventListeners.js
 	const server = document.querySelector(`#server`).value;
 	let endServer = '';
 	if (server != 'none') {
@@ -13,15 +14,13 @@ document.querySelector(`#random-btn`).addEventListener('click', (generateEvent) 
 	let endGender = '';
 	let endClass = '';
 	let endRace = '';
-	const spec = document.querySelector(`#spec`).value;
+    const spec = document.querySelector(`#spec`).value;
 	if (faction === 'yes') {
-		endFaction = randomFunctions.randomFaction();
+        endFaction = randomFunctions.randomFaction();
 	} else if (faction === 'alliance') {
 		endFaction = 'Alliance';
-		console.log(endFaction);
-	} else if (faction === 'horde') {
+	} else if (faction === 'horde') { //Turn into else block instead
 		endFaction = 'Horde';
-		console.log(endFaction);
 	}
 	if (gender === 'yes') {
 		endGender = randomFunctions.randomGender();
