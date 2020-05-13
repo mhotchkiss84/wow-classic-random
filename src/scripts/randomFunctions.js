@@ -66,6 +66,7 @@ const randomFunctions = {
 	randomSpec: () => {},
 	//Function for random race
 	randomRace: (faction) => {
+        // Create an object for this as well could also do faction/race/class onject
 		const allianceRaces = [ 'Dwarf', 'Gnome', 'Human', 'Night Elf' ];
 		const hordeRaces = [ 'Orc', 'Tauren', 'Troll', 'Undead' ];
 		let finalRace = '';
