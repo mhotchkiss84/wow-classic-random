@@ -9,6 +9,7 @@
 # Change from form to interactive interface. i.e. images of faction & random show up and user clicks on one to set. Also have a start button.
 # Have javascript output to HTML for the selections instead of having a form or anything inside the HTML
 # Complete rework of CSS
+# Find out how to add styling to readme to make it easier to read
 
 # To Use:
 # Currently due to redoing a lot of code this project is broken. I should have the main functionality back in the next day or two.
