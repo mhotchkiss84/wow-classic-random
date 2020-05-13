@@ -2,54 +2,51 @@ const randomFunctions = {
 	//Function for random server
 	randomServer: (type) => {
 		let finalServer = '';
-		const usEastPVE = [ 'Ashkandi', 'Mankrik', 'Pagle', 'Westfall', 'Windseeker' ];
-		const usEastPVP = [
-			'Benediction',
-			'Earthfury',
-			'Faerlina',
-			'Heartseeker',
-			'Herod',
-			'Incendius',
-			'Kirtonos',
-			'Kromcrush',
-			'Netherwind',
-			'Skeram',
-			'Stalagg',
-			'Sulfuras',
-			'Thalnos'
-		];
-		const usEastRP = [ 'Bloodsail Buccaneers' ];
-		const usEastRPPVP = [ 'Deviate Delight' ];
-		const usWestPVE = [ 'Atiesh', 'Azuresong', 'Myzrael', 'Old Blanchy' ];
-		const usWestPVP = [
-			'Anathema',
-			'Arcanite Reaper',
-			'Bigglesworth',
-			'Blaumeux',
-			'Fairbanks',
-			'Kurinnaxx',
-			'Rattlegore',
-			'Smolderweb',
-			'Thunderfury',
-			'Whitemane'
-		];
-		const usWestRP = [];
-		const usWestRPPVP = [ 'Grobbulus' ];
-		// Make loop for this part to clean up a bit
-		if (type === 'pve-east') {
-			finalServer = usEastPVE[Math.floor(Math.random() * usEastPVE.length)];
-		} else if (type === 'pvp-east') {
-			finalServer = usEastPVP[Math.floor(Math.random() * usEastPVP.length)];
-		} else if (type === 'rp-east') {
-			finalServer = usEastRP[Math.floor(Math.random() * usEastRP.length)];
-		} else if (type === 'rppvp-east') {
-			finalServer = usEastRPPVP[Math.floor(Math.random() * usEastRPPVP.length)];
-		} else if (type === 'pve-west') {
-			finalServer = usWestPVE[Math.floor(Math.random() * usWestPVE.length)];
-		} else if (type === 'pvp-west') {
-			finalServer = usWestPVP[Math.floor(Math.random() * usWestPVP.length)];
-		} else if (type === 'rppvp-west') {
-			finalServer = usWestRPPVP[Math.floor(Math.random() * usWestRPPVP.length)];
+		// Creating an object for the server types/lists
+		const serverList = {
+			usEastPVE: [ 'Ashkandi', 'Mankrik', 'Pagle', 'Westfall', 'Windseeker' ],
+			usEastPVP: [
+				'Benediction',
+				'Earthfury',
+				'Faerlina',
+				'Heartseeker',
+				'Herod',
+				'Incendius',
+				'Kirtonos',
+				'Kromcrush',
+				'Netherwind',
+				'Skeram',
+				'Stalagg',
+				'Sulfuras',
+				'Thalnos'
+			],
+			usEastRP: [ 'Bloodsail Buccaneers' ],
+			usEastRPPVP: [ 'Deviate Delight' ],
+			usWestPVE: [ 'Atiesh', 'Azuresong', 'Myzrael', 'Old Blanchy' ],
+			usWestPVP: [
+				'Anathema',
+				'Arcanite Reaper',
+				'Bigglesworth',
+				'Blaumeux',
+				'Fairbanks',
+				'Kurinnaxx',
+				'Rattlegore',
+				'Smolderweb',
+				'Thunderfury',
+				'Whitemane'
+			],
+			usWestRP: [],
+			usWestRPPVP: [ 'Grobbulus' ]
+		};
+		// Fix loop since refactored serverList into an object to store servers
+		for (let i = 0; i != serverTypes.length; i++) {
+			if (type === serverTypes[i]) {
+				console.log(serverTypes[i]);
+				finalServer = serverTypes[i];
+				// [Math.floor(Math.random() * serverTypes[i].length)]
+				console.log(finalServer);
+				// Make servers into object
+			}
 		}
 		return finalServer;
 	},
@@ -82,6 +79,7 @@ const randomFunctions = {
 	//Function for random class
 	randomClass: (race) => {
 		let finalClass = '';
+		// Create an object for this as well
 		const dwarfClassList = [ 'Hunter', 'Paladin', 'Priest', 'Rogue', 'Warrior' ];
 		const gnomeClassList = [ 'Mage', 'Rogue', 'Warlock', 'Warrior' ];
 		const humanClassList = [ 'Paladin', 'Priest', 'Mage', 'Rogue', 'Warlock', 'Warrior' ];
