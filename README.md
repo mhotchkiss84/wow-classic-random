@@ -12,7 +12,6 @@
 # Find out how to add styling to readme to make it easier to read
 
 # To Use:
-# Currently due to redoing a lot of code this project is broken. I should have the main functionality back in the next day or two.
 # Clone the repo
 # The database .json file does nothing currently so no need to run a JSON server
 # If using gitbash open with your code editor and run live server
